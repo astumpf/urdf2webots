@@ -596,6 +596,7 @@ def URDFJoint(proto, joint, level, parentList, childList, linkList, jointList,
         proto.write((level + 2) * indent + 'axis %lf %lf %lf\n' % (axis[0], axis[1], axis[2]))
         proto.write((level + 2) * indent + 'anchor %lf %lf %lf\n' % (joint.position[0], joint.position[1], joint.position[2]))
         proto.write((level + 2) * indent + 'dampingConstant ' + str(joint.dynamics.damping) + '\n')
+        proto.write((level + 2) * indent + 'springConstant ' + str(joint.dynamics.spring) + '\n')
         proto.write((level + 2) * indent + 'staticFriction ' + str(joint.dynamics.friction) + '\n')
         proto.write((level + 1) * indent + '}\n')
         proto.write((level + 1) * indent + 'device [\n')
@@ -616,6 +617,7 @@ def URDFJoint(proto, joint, level, parentList, childList, linkList, jointList,
                 endpointPosition[0] += axis[2] / length * position
         proto.write((level + 2) * indent + 'axis %lf %lf %lf\n' % (axis[0], axis[1], axis[2]))
         proto.write((level + 2) * indent + 'dampingConstant ' + str(joint.dynamics.damping) + '\n')
+        proto.write((level + 2) * indent + 'springConstant ' + str(joint.dynamics.spring) + '\n')
         proto.write((level + 2) * indent + 'staticFriction ' + str(joint.dynamics.friction) + '\n')
         proto.write((level + 1) * indent + '}\n')
         proto.write((level + 1) * indent + 'device [\n')
