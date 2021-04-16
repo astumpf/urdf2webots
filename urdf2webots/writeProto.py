@@ -395,6 +395,10 @@ def URDFVisual(proto, visualNode, level, normal=False, insertMesh=False, meshTra
             proto.write((shapeLevel + 2) * indent + 'baseColorMap ImageTexture {\n')
             proto.write((shapeLevel + 3) * indent + 'url [ "' + visualNode.material.texture + '" ]\n')
             proto.write((shapeLevel + 2) * indent + '}\n')
+
+            proto.write((shapeLevel + 2) * indent + 'textureTransform TextureTransform {\n')
+            proto.write((shapeLevel + 3) * indent + 'scale 1 -1\n')
+            proto.write((shapeLevel + 2) * indent + '}\n')
         proto.write((shapeLevel + 1) * indent + '}\n')
 
     if visualNode.geometry.box.x != 0:
